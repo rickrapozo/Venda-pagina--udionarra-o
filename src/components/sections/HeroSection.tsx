@@ -1,18 +1,9 @@
-import { Button } from "@/components/ui/button";
+import { GA4TrackingButton } from "@/components/GA4TrackingButton";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
 import heroBackground from "@/assets/hero-background.jpg";
 
 export const HeroSection = () => {
   const handleCTA = () => {
-    // Track CTA click
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'click', {
-        event_category: 'CTA',
-        event_label: 'Hero CTA',
-        value: 1
-      });
-    }
-    
     // Scroll to offer section or redirect to checkout
     const offerSection = document.getElementById('offer-section');
     if (offerSection) {
@@ -68,14 +59,22 @@ export const HeroSection = () => {
           
           {/* CTA Button */}
           <div className="pt-6 sm:pt-8 space-y-4 px-4">
-            <Button 
+            <GA4TrackingButton 
               variant="hero" 
               size="xl"
               onClick={handleCTA}
               className="w-full sm:w-auto animate-scale-in text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4"
+              eventLabel="hero_cta_click"
+              eventCategory="conversion"
+              customData={{
+                cta_position: 'hero_section',
+                cta_text: 'Sim, Eu Quero Instalar Minha Mente Próspera Agora!',
+                value: 27.00,
+                currency: 'BRL'
+              }}
             >
               ✨ Sim, Eu Quero Instalar Minha Mente Próspera Agora!
-            </Button>
+            </GA4TrackingButton>
             
             <p className="text-xs sm:text-sm text-primary-foreground/70 font-inter">
               Acesso imediato • Garantia de 7 dias • Apenas R$ 27,00

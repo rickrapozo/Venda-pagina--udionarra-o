@@ -1,16 +1,7 @@
-import { Button } from "@/components/ui/button";
+import { GA4TrackingButton } from "@/components/GA4TrackingButton";
 
 export const OfferSection = () => {
   const handleCTA = () => {
-    // Track CTA click
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'click', {
-        event_category: 'CTA',
-        event_label: 'Offer CTA',
-        value: 27
-      });
-    }
-    
     // Here you would typically redirect to a payment processor
     // For demo purposes, we'll show an alert
     alert('Redirecionando para o checkout... (Demo)');
@@ -77,14 +68,23 @@ export const OfferSection = () => {
 
             {/* Main CTA */}
             <div className="space-y-3 sm:space-y-4">
-              <Button 
+              <GA4TrackingButton 
                 variant="hero" 
                 size="xl"
                 onClick={handleCTA}
                 className="w-full text-xs sm:text-sm md:text-base lg:text-lg py-4 sm:py-6 px-3 sm:px-4 leading-tight"
+                eventLabel="offer_cta_click"
+                eventCategory="conversion"
+                customData={{
+                  cta_position: 'offer_section',
+                  cta_text: 'SIM, QUERO MEU ACESSO AGORA POR APENAS R$ 27!',
+                  value: 27.00,
+                  currency: 'BRL',
+                  funnel_stage: 'offer_presentation'
+                }}
               >
                 🚀 SIM, QUERO MEU ACESSO AGORA POR APENAS R$ 27!
-              </Button>
+              </GA4TrackingButton>
               
               <p className="text-xs sm:text-sm text-muted-foreground font-inter leading-tight">
                 ✅ Pagamento 100% Seguro • ✅ Acesso Imediato • ✅ Garantia de 7 Dias

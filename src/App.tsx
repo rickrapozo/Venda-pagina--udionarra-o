@@ -5,12 +5,17 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { useGA4Tracking } from "@/hooks/useGA4Tracking";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+const App = () => {
+  // Ativar rastreamento GA4
+  useGA4Tracking();
+  
+  return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
@@ -24,8 +29,9 @@ const App = () => (
       </BrowserRouter>
       <Analytics />
         <SpeedInsights />
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
