@@ -21,6 +21,15 @@ export const HeroSection = () => {
         backgroundAttachment: 'fixed'
       }}
     >
+      {/* Faixa de Aviso Importante */}
+      <div className="absolute top-0 left-0 right-0 z-50 bg-red-600 text-white py-2 px-4 shadow-lg">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="text-xs sm:text-sm md:text-base font-bold font-montserrat leading-tight animate-pulse">
+            ⚠️ AVISO IMPORTANTE: O que você está prestes a descobrir nesta página desafia 99% dos métodos de desenvolvimento pessoal que você já tentou. Leia até o final com atenção. Essa Informação não ficará no ar por muito tempo! ⚠️
+          </p>
+        </div>
+      </div>
+      
       {/* Background overlay for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/95 to-secondary/90"></div>
       
