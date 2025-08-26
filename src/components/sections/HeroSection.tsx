@@ -33,7 +33,7 @@ export const HeroSection = () => {
       {/* Background overlay for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/95 to-secondary/90"></div>
       
-      <div className="relative z-10 max-w-6xl mx-auto text-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+      <div className="relative z-10 max-w-6xl mx-auto text-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 pt-16 sm:pt-20">
         <div className="space-y-6 sm:space-y-8 animate-fade-in-up">
           {/* Main Headline */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-montserrat font-bold leading-tight max-w-5xl mx-auto">
