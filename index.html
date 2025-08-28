@@ -48,6 +48,18 @@
       // Debug GTM loading
       console.log('GTM script initialized for container: GTM-PHMLQKT9');
       console.log('DataLayer initialized:', window.dataLayer);
+      
+      // Check if GTM script loads successfully
+      setTimeout(function() {
+        if (typeof google_tag_manager !== 'undefined' || window.gtag) {
+          console.log('✅ Google Tag Manager loaded successfully');
+        } else {
+          console.warn('⚠️ Google Tag Manager may not have loaded properly');
+          console.log('Checking for GTM container...');
+          console.log('GTM container exists:', !!window.google_tag_manager);
+          console.log('DataLayer length:', window.dataLayer.length);
+        }
+      }, 3000);
     </script>
     <!-- End Google Tag Manager -->
   </head>

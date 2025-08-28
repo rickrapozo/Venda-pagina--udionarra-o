@@ -133,8 +133,8 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioUrl }) => {
       {/* Instruções de uso */}
       <div className="text-center">
         <p className="text-xs text-primary-foreground/60 font-inter leading-relaxed">
-          Pressione play para ouvir a narração da página • Ajuste o volume conforme necessário<br/>
-          <span className="text-gold/80">Para melhor experiência, use fones de ouvido</span>
+          Pressione play e leia com ateção até o final• Ajuste o volume e a velocidade conforme necessário<br/>
+          <span className="text-gold/80">🎧 Para melhor experiência, use fones de ouvido</span>
         </p>
       </div>
 

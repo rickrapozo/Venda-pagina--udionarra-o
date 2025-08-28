@@ -1,4 +1,4 @@
-# Guia de Rastreamento GA4 - Fator Essencial
+a# Guia de Rastreamento GA4 - Fator Essencial
 
 ## 📊 Visão Geral
 
